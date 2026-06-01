@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMART AI Ingestion</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <header>
+      <h1>SMART AI Ingestion</h1>
+      <p class="subtitle">Describe your data ingestion need — the orchestrator will route, ask for missing details, and confirm before running.</p>
+    </header>
+
+    <main>
+      <div id="chat" class="chat" aria-live="polite"></div>
+
+      <div id="plan-actions" class="plan-actions hidden">
+        <button id="btn-confirm" class="btn primary">Confirm plan</button>
+        <button id="btn-cancel" class="btn secondary">Cancel</button>
+      </div>
+
+      <div class="upload-bar">
+        <input id="file-input" type="file" accept=".csv,.json" />
+        <button type="button" id="btn-upload" class="btn secondary">Upload file</button>
+        <span id="upload-status" class="upload-status"></span>
+      </div>
+
+      <form id="chat-form" class="chat-form">
+        <input id="message-input" type="text" placeholder="e.g. Load uploads/customers.csv into SQLite table customers" autocomplete="off" />
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </main>
+
+    <aside class="sidebar">
+      <h2>Example prompts</h2>
+      <ul class="examples">
+        <li data-prompt="Load test_data/customers.csv into SQLite table customers">CSV → SQLite (customers)</li>
+        <li data-prompt="Ingest test_data/products.json into SQLite table products">JSON → SQLite (products)</li>
+        <li data-prompt="Fetch https://jsonplaceholder.typicode.com/users and save to data/output/users.json">REST → JSON file</li>
+        <li data-prompt="Transform test_data/customers.csv to data/output/customers_copy.csv">CSV → CSV copy</li>
+        <li data-prompt="Upload test_data/customers.csv to S3 bucket my-bucket key ingested/customers.csv">CSV → S3</li>
+        <li data-prompt="Load from s3://my-bucket/ingested/customers.csv into SQLite table s3_customers">S3 → SQLite</li>
+        <li data-prompt="Load test_data/customers.csv into PostgreSQL table customers">CSV → PostgreSQL</li>
+        <li data-prompt="Stream test_data/events.ndjson to Parquet at data/output/events.parquet">Stream JSON → Parquet</li>
+        <li data-prompt="Stream test_data/events.ndjson to data/output/events.ndjson">Stream JSON → NDJSON</li>
+        <li data-prompt="Load test_data/customers.csv into SQLite table us_customers where country eq USA">Filter + ingest</li>
+        <li data-prompt="Stream test_data/events.ndjson to Parquet at data/output/by_type.parquet group by event_type count(event_id)">Stream + aggregate</li>
+        <li data-prompt="Load test_data/customers.csv into SQLite table enriched join test_data/customer_labels.csv on customer_id = customer_id">Join + ingest</li>
+      </ul>
+      <h2>Available agents</h2>
+      <ul id="agents-list" class="agents-list"></ul>
+    </aside>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
