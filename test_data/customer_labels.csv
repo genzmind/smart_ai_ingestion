@@ -1,0 +1,6 @@
+customer_id,segment,lifetime_value
+1,enterprise,120000
+2,smb,45000
+3,enterprise,98000
+4,smb,22000
+5,enterprise,150000

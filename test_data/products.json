@@ -1,0 +1,6 @@
+[
+  {"product_id": "P001", "name": "Wireless Mouse", "category": "Electronics", "price": "29.99"},
+  {"product_id": "P002", "name": "USB-C Hub", "category": "Electronics", "price": "49.99"},
+  {"product_id": "P003", "name": "Desk Lamp", "category": "Office", "price": "34.50"},
+  {"product_id": "P004", "name": "Notebook Pack", "category": "Office", "price": "12.00"}
+]
