@@ -7,3 +7,4 @@ data/s3-mock/
 uploads/
 *.db
 .env
+.idea

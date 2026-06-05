@@ -19,6 +19,7 @@ Intelligent data ingestion orchestrator: describe your pipeline in natural langu
 |----------|------|
 | Requirements | [docs/REQUIREMENTS.md](docs/REQUIREMENTS.md) |
 | Design | [docs/DESIGN.md](docs/DESIGN.md) |
+| System Architecture | [docs/SYSTEM_ARCHITECTURE.md](docs/SYSTEM_ARCHITECTURE.md) |
 
 ## Quick start
 
